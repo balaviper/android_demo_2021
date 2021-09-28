@@ -6,7 +6,7 @@ package com.basics.kotlin_basics1
 fun sum(a: Int, b: Int): Int {
     return a + b
 }
-fun printloops() : Unit{
+fun printloops(){
     val items = listOf("apple", "banana", "kiwifruit")
     println("**** for loop ****")
     for(i in 0..10 step 2){
