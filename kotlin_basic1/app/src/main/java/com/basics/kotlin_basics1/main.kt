@@ -10,7 +10,7 @@ fun printloops() : Unit{
     val items = listOf("apple", "banana", "kiwifruit")
     println("**** for loop ****")
     for(i in 0..10 step 2){
-        println("$i")
+        println("$i ${i*2}")
     }
     println("**** for loop decrement ****")
     for (i in 10 downTo 1 step 2) {
