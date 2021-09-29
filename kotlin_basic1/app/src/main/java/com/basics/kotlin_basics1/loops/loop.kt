@@ -1,12 +1,6 @@
-package com.basics.kotlin_basics1
+package com.basics.kotlin_basics1.loops
 
-
-//void :: unit ; int :: Int ;;
-
-fun sum(a: Int, b: Int): Int {
-    return a + b
-}
-fun printloops(){
+fun forLoops(){
     val items = listOf("apple", "banana", "kiwifruit")
     println("**** for loop ****")
     for(i in 0..10 step 2){
@@ -18,22 +12,35 @@ fun printloops(){
     }
     println("**** For each with index value****")
     for(i in items.indices){
-        println("Item $i")
+        println("Item ${items[i]}")
     }
     println("**** For each with value****")
     for(i in items){
         println("Item $i")
     }
 
+    for((index , value) in items.withIndex()){
+        println("Index ${index}, value = $value")
+    }
+    for(i in 0 until (items.size)){
+        println("$i")
+    }
+
 }
-fun printSum(a: Int, b: Int): Unit {
-    println("sum of $a and $b is ${a + b}")
+
+fun whileLoop(){
+    var i = 0
+    while(i<10){
+        println(i)
+        i++
+    }
+    do{
+        println(i)
+        i++
+    }while(i<20)
 }
 
 fun main() {
-    var x = 70
-    val y = 30 // immutable
-    println("Bala viper $x")
-    println(sum(10,20))
-    printloops()
+    //forLoops()
+    whileLoop()
 }

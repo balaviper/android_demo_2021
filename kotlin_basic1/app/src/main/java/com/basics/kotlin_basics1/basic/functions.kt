@@ -1,4 +1,4 @@
-package com.basics.kotlin_basics1
+package com.basics.kotlin_basics1.basic
 
 import kotlin.math.pow
 
