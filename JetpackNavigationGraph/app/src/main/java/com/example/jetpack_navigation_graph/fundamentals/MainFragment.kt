@@ -1,0 +1,47 @@
+package com.example.jetpack_navigation_graph.fundamentals
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.jetpack_navigation_graph.databinding.FragmentMainBinding
+
+class MainFragment : Fragment() {
+
+    private lateinit var binding: FragmentMainBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentMainBinding.inflate(
+            inflater,
+            container,
+            false
+        )
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnVt.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToViewTxnFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnSendMoney.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToChooseRecipientFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnViewBalance.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToViewBalanceFragment()
+            findNavController().navigate(action)
+        }
+    }
+}
+
+

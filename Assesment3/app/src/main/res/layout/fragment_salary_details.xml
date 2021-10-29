@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.assesment3.SalaryViewModel"/>
+
+        <variable
+            name="vm"
+            type="SalaryViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SalaryDetailsFragment">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="Salary Details"
+            android:textColor="@color/teal_700"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.155"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNumber2"
+            android:layout_width="344dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="Basic Salary"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:onTextChanged="@{(cs,st,ed,cn) -> vm.updateSalary(cs.toString())}"
+            />
+
+        <EditText
+            android:id="@+id/editTextNumber6"
+            android:layout_width="347dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:hint="HRA"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber2"
+            android:onTextChanged="@{(cs,st,ed,cn) -> vm.updateHra(cs.toString())}"
+            />
+
+        <EditText
+            android:id="@+id/editTextNumber7"
+            android:layout_width="343dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="TA"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.426"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber6"
+            android:onTextChanged="@{(cs,st,ed,cn) -> vm.updateTa(cs.toString())}"
+            />
+
+        <EditText
+            android:id="@+id/editTextNumber8"
+            android:layout_width="342dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="44dp"
+            android:ems="10"
+            android:hint="CTC"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.449"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber7"
+            android:onTextChanged="@{(cs,st,ed,cn) -> vm.updateCtc(cs.toString())}"
+            />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:text="Save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumber8"
+            android:onClickListener="@{()->vm.updateData()}"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
