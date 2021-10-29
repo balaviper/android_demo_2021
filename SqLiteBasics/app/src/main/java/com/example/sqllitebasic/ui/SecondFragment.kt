@@ -14,9 +14,7 @@ import com.example.sqllitebasic.db.Dealer
 import com.example.sqllitebasic.db.DealerDao
 import com.example.sqllitebasic.db.DealerDatabase
 import com.example.sqllitebasic.db.DealersViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 
 
 class SecondFragment : Fragment() {
@@ -24,6 +22,8 @@ class SecondFragment : Fragment() {
     private var _binding: FragmentSecondBinding? = null
 
     private lateinit var db: DealerDatabase
+
+    private lateinit var scp: CoroutineScope
 
     private lateinit var dealerDao: DealerDao
 
@@ -38,6 +38,12 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        scp = CoroutineScope(Dispatchers.IO)
+
+        db = viewModel.dataBuilder(requireContext())
+
+        dealerDao = viewModel.dataDao(db)
+
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -47,11 +53,25 @@ class SecondFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
 
-        val scp = viewModel.scp.value
+        val layoutManager = LinearLayoutManager(requireContext())
+        binding.del.layoutManager = layoutManager
+        binding.del.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                layoutManager.orientation
+            )
+        )
+        loadFromDatabase()
 
-        db = viewModel.dataBuilder(requireContext())
+    }
 
-        dealerDao = viewModel.dataDao(db)
+    override fun onDestroyView() {
+        super.onDestroyView()
+        scp.cancel()
+        _binding = null
+    }
+
+    private fun loadFromDatabase() {
         scp?.launch {
             dataSource = dealerDao.findAllDealers()
             /*
@@ -66,29 +86,12 @@ class SecondFragment : Fragment() {
                 )
             }
             withContext(Dispatchers.Main) {
-                val adapter = DealerListAdapter(
+                binding.del.adapter = DealerListAdapter(
                     requireContext(),
                     dataSource
                 )
-                binding.del.adapter = adapter
-                val layoutManager = LinearLayoutManager(requireContext())
-                binding.del.layoutManager = layoutManager
-                binding.del.addItemDecoration(
-                    DividerItemDecoration(
-                        requireContext(),
-                        layoutManager.orientation
-                    )
-                )
-
             }
         }
-
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
 
