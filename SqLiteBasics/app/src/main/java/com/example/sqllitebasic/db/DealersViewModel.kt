@@ -1,7 +1,6 @@
 package com.example.sqllitebasic.db
 
 import android.content.Context
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

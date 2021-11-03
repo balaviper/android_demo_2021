@@ -1,6 +1,5 @@
 package com.basics.kotlin_basics1.conditional
 
-import android.icu.number.IntegerWidth
 import java.util.Scanner
 val os = Scanner(System.`in`);
 fun ifElse() {

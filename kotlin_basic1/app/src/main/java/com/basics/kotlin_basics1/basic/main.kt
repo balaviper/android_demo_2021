@@ -1,5 +1,7 @@
 package com.basics.kotlin_basics1.basic
 
+import java.lang.Exception
+
 
 //void :: unit ; int :: Int ;;
 
@@ -31,9 +33,5 @@ fun printSum(a: Int, b: Int): Unit {
 }
 
 fun main() {
-    var x = 70
-    val y = 30 // immutable
-    println("Bala viper $x")
-    println(sum(10,20))
-    printloops()
+
 }
