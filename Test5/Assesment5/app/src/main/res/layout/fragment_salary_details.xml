@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SalaryDetailsFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Salary Details"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtsalary"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:hint="Basic Salary"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edthra"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="62dp"
+        android:ems="10"
+        android:hint="HRA"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtsalary" />
+
+    <EditText
+        android:id="@+id/edtta"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="62dp"
+        android:ems="10"
+        android:hint="TA"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edthra" />
+
+    <EditText
+        android:id="@+id/edtctc"
+        android:layout_width="316dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:hint="CTC"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtta" />
+
+    <Button
+        android:id="@+id/salSave"
+        android:layout_width="104dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="154dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtctc" />
+</androidx.constraintlayout.widget.ConstraintLayout>

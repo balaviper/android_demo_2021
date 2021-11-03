@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.assesment5.ui.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_salaryCardFragment"
+            app:destination="@id/salaryCardFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_salaryDetailsFragment"
+            app:destination="@id/salaryDetailsFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_basicDetailsFragment"
+            app:destination="@id/basicDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salaryDetailsFragment"
+        android:name="com.example.assesment5.ui.SalaryDetailsFragment"
+        android:label="fragment_salary_details"
+        tools:layout="@layout/fragment_salary_details" />
+    <fragment
+        android:id="@+id/basicDetailsFragment"
+        android:name="com.example.assesment5.ui.BasicDetailsFragment"
+        android:label="fragment_basic_details"
+        tools:layout="@layout/fragment_basic_details" >
+        <action
+            android:id="@+id/action_basicDetailsFragment_to_salaryDetailsFragment"
+            app:destination="@id/salaryDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/salaryCardFragment"
+        android:name="com.example.assesment5.ui.SalaryCardFragment"
+        android:label="fragment_salary_card"
+        tools:layout="@layout/fragment_salary_card" />
+</navigation>

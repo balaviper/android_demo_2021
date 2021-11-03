@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SalaryCardFragment" >
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="192dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        android:text="Salary card"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="320dp"
+        android:layout_height="2dp"
+        android:background="#E91E63"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <TextView
+        android:id="@+id/cbname"
+        android:layout_width="177dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+    <TextView
+        android:id="@+id/cbmob"
+        android:layout_width="145dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+    <TextView
+        android:id="@+id/cbmail"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbmob" />
+
+    <TextView
+        android:id="@+id/cbAge"
+        android:layout_width="117dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbname" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="320dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="28dp"
+        android:background="#E91E63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbAge" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:text="Salary"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <TextView
+        android:id="@+id/scSal"
+        android:layout_width="175dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="36dp"
+        android:gravity="right"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/scHra"
+        android:layout_width="177dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="right"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scSal" />
+
+    <TextView
+        android:id="@+id/scTa"
+        android:layout_width="178dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="right"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scHra" />
+
+    <TextView
+        android:id="@+id/scCtc"
+        android:layout_width="178dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="right"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scTa" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="85dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:text="Enter Id :"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <Spinner
+        android:id="@+id/salId"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

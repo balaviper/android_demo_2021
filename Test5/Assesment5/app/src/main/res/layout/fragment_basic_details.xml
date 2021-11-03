@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BasicDetailsFragment" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="186dp"
+        android:text="Basic Details"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtbsname"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edtbsmob"
+        android:layout_width="322dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="62dp"
+        android:ems="10"
+        android:hint="Mobile"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtbsname" />
+
+    <EditText
+        android:id="@+id/edtbsage"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="62dp"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtbsmob" />
+
+    <EditText
+        android:id="@+id/edtbsmail"
+        android:layout_width="316dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="68dp"
+        android:ems="10"
+        android:hint="example@gmail.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtbsage" />
+
+    <Button
+        android:id="@+id/bsSave"
+        android:layout_width="104dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="154dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtbsmail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
