@@ -3,6 +3,7 @@ package com.example.espressotestingbasics
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.*
+import androidx.test.espresso.PerformException
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.*
 import androidx.test.espresso.contrib.RecyclerViewActions
@@ -25,7 +26,7 @@ class RecViewTest {
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
-    lateinit var validation : LoginValidations
+    lateinit var validation: LoginValidations
 
     @Before
     fun init() {
@@ -69,9 +70,10 @@ class RecViewTest {
             validation.isUserNameValid("#ddd")
         ).isFalse()
     }
+
     ////////////////////////////////////////////////////////////////
     @Test
-    fun check_Password_Normal(){
+    fun check_Password_Normal() {
         Truth.assertThat(
             validation.isPasswordValid("abc")
         ).isAnyOf(
@@ -79,38 +81,45 @@ class RecViewTest {
             false
         )
     }
+
     @Test
-    fun check_Password_LengthExed(){
+    fun check_Password_LengthExed() {
         Truth.assertThat(
             validation.isPasswordValid("Balaviperu99")
         ).isFalse()
     }
+
     @Test
-    fun check_Password_CorrectLength(){
+    fun check_Password_CorrectLength() {
         Truth.assertThat(
             validation.isPasswordValid("qwertyuu")
         ).isTrue()
     }
+
     @Test
-    fun check_Password_SpecialChar(){
+    fun check_Password_SpecialChar() {
         Truth.assertThat(
             validation.isPasswordValid("Bala##")
         ).isTrue()
     }
+
     @Test
-    fun check_Password_Numbers(){
+    fun check_Password_Numbers() {
         Truth.assertThat(
             validation.isPasswordValid("Bala10")
         ).isTrue()
     }
+
+    // ***************************************************************************
+
     @Test
-    fun test_Login(){
+    fun test_Login() {
         onView(withId(R.id.edtUser))
             .perform(
                 replaceText("bala")
             )
 
-       onView(withId(R.id.edtPass))
+        onView(withId(R.id.edtPass))
             .perform(
                 typeText("bala10")
             )
@@ -124,7 +133,7 @@ class RecViewTest {
     }
 
     @Test
-    fun checkBox_isWorking(){
+    fun checkBox_isWorking() {
         test_Login()
         onView(withId(R.id.checkBox))
             .check(
@@ -133,20 +142,20 @@ class RecViewTest {
     }
 
     @Test
-    fun checkBox_isTrue(){
+    fun checkBox_isTrue() {
         test_Login()
         onView(withId(R.id.checkBox)).check(matches(isNotChecked())).perform(click())
     }
 
     @Test
-    fun checkBox_isFalse(){
+    fun checkBox_isFalse() {
         test_Login()
         onView(withId(R.id.checkBox)).check(matches(isNotChecked())).perform(click())
         onView(withId(R.id.checkBox)).check(matches(isChecked())).perform(click())
     }
 
     @Test
-    fun checkBox_RecView_Visible(){
+    fun checkBox_RecView_Visible() {
         checkBox_isTrue()
         onView(withId(R.id.rec))
             .check(
@@ -155,7 +164,7 @@ class RecViewTest {
     }
 
     @Test
-    fun checkBox_RecView_InVisible(){
+    fun checkBox_RecView_InVisible() {
         checkBox_isFalse()
         onView(withId(R.id.rec))
             .check(
@@ -164,9 +173,9 @@ class RecViewTest {
     }
 
     @Test
-    fun checkBox_RecView_ItemClicked(){
+    fun checkBox_RecView_ItemClicked() {
         checkBox_RecView_Visible()
-                onView(
+        onView(
             withId(R.id.rec)
         ).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecVh>(
@@ -174,5 +183,27 @@ class RecViewTest {
                 click()
             )
         )
+    }
+
+    @Test
+    fun checkBox_RecView_Scroll_ItemClicked() {
+        checkBox_RecView_Visible()
+        onView(withId(R.id.rec))
+            .perform(
+                RecyclerViewActions.scrollTo<RecVh>(
+                    hasDescendant(withText("nml"))
+                )
+            ).perform(click())
+    }
+    @Test
+    fun checkBox_RecView_ScrollAnd_ItemClicked() {
+        checkBox_RecView_Visible()
+        onView(withId(R.id.rec))
+            .perform(
+                RecyclerViewActions.actionOnItemAtPosition<RecVh>(
+                    5,
+                    click()
+                )
+            )
     }
 }
